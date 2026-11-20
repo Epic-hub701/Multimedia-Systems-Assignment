@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="sautisol.css">
+<link rel="icon" href="favicon.ico">
+<script src="sautisol.js" defer></script>
+<title>Sautisol — Official Band Website</title>
+</head>
+<body>
+<header>
+  <div class="logo">SAUTISOL</div>
+  <nav id="nav">
+    <a href="#home">Home &amp; Music</a><a href="#media">Gallery &amp; Events</a><a href="#tickets">Tickets</a><a href="#account">Login / Sign up</a>
+  </nav>
+</header>
+<main>
+
+<section class="page" id="home">
+  <div class="hero">
+    <span class="tag">New tour 2026</span>
+    <h1>The sound of a <br>generation.</h1>
+    <p>Sautisol blends live rhythm, rich harmonies and storytelling into a show you feel in your chest. Press play below, then record your own take.</p>
+    <p><a class="btn" href="#tickets">Get tickets</a> <a class="btn ghost" href="#media">See gallery</a></p>
+  </div>
+  <h2>Listen — 10 audio formats</h2>
+  <p style="color:var(--mute);margin-top:-8px">Click a track to play or stop. Files load from <code>audio/sautisol-1.mp3</code> … <code>sautisol-10.aiff</code>; if a file or format isn't available, a built-in demo melody plays instead.</p>
+  <div class="grid" id="tracks"></div>
+
+  <h2>Record your voice or instrument</h2>
+  <div class="card">
+    <div class="two">
+      <div>
+        <div class="timer" id="timer">00:00</div>
+        <div id="recState" style="color:var(--mute)">Ready. Record as long as you like (aim for 1+ minute).</div>
+        <label for="fmt">Recording format</label>
+        <select id="fmt"></select>
+        <div class="rec-row">
+          <button class="btn rec" id="recBtn">● Start recording</button>
+          <button class="btn ghost" id="stopBtn" disabled>■ Stop</button>
+        </div>
+      </div>
+      <div>
+        <div id="recOut" style="color:var(--mute)">Your recording will appear here for playback and download.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="media">
+  <h1 style="font-size:clamp(2rem,6vw,3.2rem)">Gallery</h1>
+  <div class="grid" id="gallery"></div>
+  <h2>Event posters</h2>
+  <div class="grid" id="posters"></div>
+</section>
+
+<section class="page" id="tickets">
+  <h1 style="font-size:clamp(2rem,6vw,3.2rem)">Tickets</h1>
+  <div class="two">
+    <div>
+      <label for="ev">Choose event</label>
+      <select id="ev"></select>
+      <div class="grid" id="tiers" style="margin-top:16px;grid-template-columns:1fr"></div>
+    </div>
+    <div class="card">
+      <h2 style="margin-top:0">Your order</h2>
+      <div id="sum" style="color:var(--mute)">No tickets selected.</div>
+      <label for="cn">Full name</label><input id="cn" autocomplete="name">
+      <label for="ce">Email</label><input id="ce" type="email" autocomplete="email">
+      <label for="cp">Payment method</label>
+      <select id="cp"><option>Mobile money (M-Pesa)</option><option>Card</option><option>Pay at the gate</option></select>
+      <p style="margin-top:16px"><button class="btn" id="buy">Confirm purchase</button></p>
+      <div class="msg" id="buyMsg"></div>
+      <small style="color:var(--mute)">Demo checkout: no real payment is taken. Connect a payment provider before going live.</small>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="account">
+  <h1 style="font-size:clamp(2rem,6vw,3.2rem)">Join the Sautisol family</h1>
+  <div id="who" class="card" style="display:none;margin-bottom:16px"></div>
+  <div class="two">
+    <form class="card" id="loginF" onsubmit="return false">
+      <h2 style="margin-top:0">Login</h2>
+      <label for="le">Email</label><input id="le" type="email" autocomplete="email">
+      <label for="lp">Password</label><input id="lp" type="password" autocomplete="current-password">
+      <p><button class="btn" id="loginB">Login</button></p><div class="msg" id="lm"></div>
+    </form>
+    <form class="card" id="signF" onsubmit="return false">
+      <h2 style="margin-top:0">Sign up</h2>
+      <label for="sn">Name</label><input id="sn" autocomplete="name">
+      <label for="se">Email</label><input id="se" type="email" autocomplete="email">
+      <label for="sp">Password (8+ characters)</label><input id="sp" type="password" autocomplete="new-password">
+      <p><button class="btn" id="signB">Create account</button></p><div class="msg" id="sm"></div>
+    </form>
+  </div>
+  <small style="color:var(--mute)">Demo accounts are stored only in this browser. A real launch needs a secure backend.</small>
+</section>
+
+</main>
+<footer>© 2026 Sautisol. All rights reserved. · Booking: bookings@sautisol.example</footer>
+<div class="lb" id="lb"><div id="lbi"></div></div>
+</body>
+</html>
